@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test post, randow&#39;s blog">
-    <meta name="description" content="#hello?#this is my first post
-">
+    <meta name="keywords" content="ephem, randow&#39;s blog">
+    <meta name="description" content="ephem 是一个用于天文计算的 Python 库，它可以计算天体的位置、日出日落时间等相关信息。ephem 库中的对象主要包括以下几种：
+Observer 对象：表示一个地理位置上的观察者，用于计算天体的位置和视觉参数。创建 Observ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test post | randow&#39;s blog</title>
+    <title>ephem | randow&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -273,12 +273,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test post</h1>
+                    <h1 class="description center-align post-title">ephem</h1>
                 </div>
             </div>
         </div>
@@ -314,7 +314,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-13
+                    2023-04-06
                 </div>
                 
 
@@ -335,7 +335,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>#hello?<br>#this is my first post</p>
+                <p>ephem 是一个用于天文计算的 Python 库，它可以计算天体的位置、日出日落时间等相关信息。ephem 库中的对象主要包括以下几种：</p>
+<p>Observer 对象：表示一个地理位置上的观察者，用于计算天体的位置和视觉参数。创建 Observer 对象时，可以设置地理坐标（纬度、经度）、海拔、大气压、温度等参数。<br>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">observer = ephem.Observer()</span><br><span class="line">observer.lat = <span class="string">&#x27;40.7128&#x27;</span></span><br><span class="line">observer.lon = <span class="string">&#x27;-74.0060&#x27;</span></span><br><span class="line">observer.elevation = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>Body 对象：表示天文中的天体，如恒星、行星、月球等。ephem 库提供了一些预定义的天体，如太阳（ephem.Sun()）、月球（ephem.Moon()）等。你还可以通过提供天体的详细参数（例如位置、速度等）来创建自定义天体。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">mars = ephem.Mars()</span><br><span class="line">sun = ephem.Sun()</span><br></pre></td></tr></table></figure>
+<p>Date 对象：表示日期和时间，可以用于计算天文事件（如日出、日落）发生的时间。ephem 库提供了一些有用的日期函数，如 ephem.now()（获取当前日期时间）和 ephem.date()（创建一个特定的日期时间）。<br>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">now = ephem.now()</span><br><span class="line">specific_date = ephem.date(<span class="string">&#x27;2023/4/6&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>FixedBody 对象：表示天文中的固定位置天体，如恒星。通过提供恒星的赤经、赤纬等参数，可以创建 FixedBody 对象。<br>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">sirius = ephem.FixedBody()</span><br><span class="line">sirius._ra = <span class="string">&#x27;6:45:08.917&#x27;</span></span><br><span class="line">sirius._dec = <span class="string">&#x27;-16:42:58.02&#x27;</span></span><br><span class="line">sirius.compute()</span><br></pre></td></tr></table></figure>
+<p>在创建了这些对象之后，你可以使用它们进行各种天文计算，例如计算某个天体在特定时间的方位角和高度角、计算日出和日落时间等。要了解更多关于 ephem 库的信息和使用方法，可以访问其官方文档：<a target="_blank" rel="noopener" href="https://rhodesmill.org/pyephem/">https://rhodesmill.org/pyephem/</a></p>
 
                 
             </div>
@@ -362,7 +371,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://randowlh.github.io/2023/01/13/test-post/">https://randowlh.github.io/2023/01/13/test-post/</a>
+                    <a href="https://randowlh.github.io/2023/04/06/ephem/">https://randowlh.github.io/2023/04/06/ephem/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -476,9 +485,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/04/06/ephem/">
                     <div class="card-image">
@@ -496,9 +506,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -507,6 +517,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -514,7 +525,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2023/01/13/test-post/">
@@ -544,7 +555,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

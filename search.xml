@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>ephem</title>
+      <link href="/2023/04/06/ephem/"/>
+      <url>/2023/04/06/ephem/</url>
+      
+        <content type="html"><![CDATA[<p>ephem 是一个用于天文计算的 Python 库，它可以计算天体的位置、日出日落时间等相关信息。ephem 库中的对象主要包括以下几种：</p><p>Observer 对象：表示一个地理位置上的观察者，用于计算天体的位置和视觉参数。创建 Observer 对象时，可以设置地理坐标（纬度、经度）、海拔、大气压、温度等参数。<br>示例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">observer = ephem.Observer()</span><br><span class="line">observer.lat = <span class="string">&#x27;40.7128&#x27;</span></span><br><span class="line">observer.lon = <span class="string">&#x27;-74.0060&#x27;</span></span><br><span class="line">observer.elevation = <span class="number">10</span></span><br></pre></td></tr></table></figure><p>Body 对象：表示天文中的天体，如恒星、行星、月球等。ephem 库提供了一些预定义的天体，如太阳（ephem.Sun()）、月球（ephem.Moon()）等。你还可以通过提供天体的详细参数（例如位置、速度等）来创建自定义天体。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">mars = ephem.Mars()</span><br><span class="line">sun = ephem.Sun()</span><br></pre></td></tr></table></figure><p>Date 对象：表示日期和时间，可以用于计算天文事件（如日出、日落）发生的时间。ephem 库提供了一些有用的日期函数，如 ephem.now()（获取当前日期时间）和 ephem.date()（创建一个特定的日期时间）。<br>示例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">now = ephem.now()</span><br><span class="line">specific_date = ephem.date(<span class="string">&#x27;2023/4/6&#x27;</span>)</span><br></pre></td></tr></table></figure><p>FixedBody 对象：表示天文中的固定位置天体，如恒星。通过提供恒星的赤经、赤纬等参数，可以创建 FixedBody 对象。<br>示例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ephem</span><br><span class="line">sirius = ephem.FixedBody()</span><br><span class="line">sirius._ra = <span class="string">&#x27;6:45:08.917&#x27;</span></span><br><span class="line">sirius._dec = <span class="string">&#x27;-16:42:58.02&#x27;</span></span><br><span class="line">sirius.compute()</span><br></pre></td></tr></table></figure><p>在创建了这些对象之后，你可以使用它们进行各种天文计算，例如计算某个天体在特定时间的方位角和高度角、计算日出和日落时间等。要了解更多关于 ephem 库的信息和使用方法，可以访问其官方文档：<a href="https://rhodesmill.org/pyephem/">https://rhodesmill.org/pyephem/</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test post</title>
       <link href="/2023/01/13/test-post/"/>
       <url>/2023/01/13/test-post/</url>
